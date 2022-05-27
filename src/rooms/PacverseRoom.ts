@@ -225,7 +225,7 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
         let newNetworkedUser = new ColyseusNetworkedUser().assign({
             id: client.id,
             sessionId: client.sessionId,
-
+            userName: options.userName,
         });
 
         this.state.networkedUsers.set(client.sessionId, newNetworkedUser);

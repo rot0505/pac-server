@@ -25,6 +25,7 @@ export class ColyseusNetworkedEntity extends Schema {
 export class ColyseusNetworkedUser extends Schema {
     @type("string") id: string;
     @type("string") sessionId: string;
+    @type("string") userName: string;
     @type("boolean") connected: boolean;
     @type("number") timestamp: number;
     @type({ map: "string" }) attributes = new MapSchema<string>();
