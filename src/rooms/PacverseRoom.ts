@@ -240,10 +240,15 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
             this.broadcast("onFurniture", furniture, { except: client });
         });
 
-        this.onMessage("onUserDecoration", (client, equipments) => {
-            console.log(equipments)
-            this.broadcast("onUserDecoration", equipments, { except: client });
+        this.onMessage("onDance", (client, dance) => {
+            this.broadcast("onDance", dance, { except: client });
         });
+
+        this.onMessage("onGesture", (client, gesture) => {
+            this.broadcast("onGesture", gesture, { except: client });
+        });
+
+
     }
 
     /**
