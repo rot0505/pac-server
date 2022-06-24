@@ -26,6 +26,20 @@ export class ColyseusNetworkedUser extends Schema {
     @type("string") id: string;
     @type("string") sessionId: string;
     @type("string") userName: string;
+
+    @type("string") headMat: string;
+    @type("string") headColor: string;
+    @type("string") hairMat: string;
+    @type("string") hairColor: string;
+    @type("string") clothMat: string;
+    @type("string") clothColor: string;
+    @type("string") shoeMat: string;
+    @type("string") shoeColor: string;
+    @type("string") glassMat: string;
+    @type("string") glassColor: string;
+    @type("string") maskMat: string;
+    @type("string") maskColor: string;
+
     @type("boolean") connected: boolean;
     @type("number") timestamp: number;
     @type({ map: "string" }) attributes = new MapSchema<string>();

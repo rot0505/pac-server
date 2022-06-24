@@ -226,6 +226,18 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
             id: client.id,
             sessionId: client.sessionId,
             userName: options.userName,
+            headMat: options.headMat,
+            headColor: options.headColor,
+            hairMat: options.hairMat,
+            hairColor: options.hairColor,
+            clothMat: options.clothMat,
+            clothColor: options.clothColor,
+            shoeMat: options.shoeMat,
+            shoeColor: options.shoeColor,
+            glassMat: options.glassMat,
+            glassColor: options.glassColor,
+            maskMat: options.maskMat,
+            maskColor: options.maskColor
         });
 
         this.state.networkedUsers.set(client.sessionId, newNetworkedUser);
@@ -247,7 +259,6 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
         this.onMessage("onGesture", (client, gesture) => {
             this.broadcast("onGesture", gesture, { except: client });
         });
-
 
     }
 
