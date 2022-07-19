@@ -5,16 +5,16 @@ const saveItem = async (req, res, next) => {
        account
     } = req.body
     console.log(req.body);
-    const fuerniture = await itemService.findItemByAccount(account)
-    if (!fuerniture) {
+    const item = await itemService.findItemByAccount(account)
+    if (!item) {
         //must add validate signMsg
         const result = await itemService.addItem(req.body)
         return res.json(result)
     } else {
-        const furniture = {
+        const item = {
             ...req.body
         }
-        const result = await furnitureService.updateItem(account)
+        const result = await itemService.updateItem(item)
         return res.json(result)
     }
 }
