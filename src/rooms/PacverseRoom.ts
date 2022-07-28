@@ -225,6 +225,7 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
         let newNetworkedUser = new ColyseusNetworkedUser().assign({
             id: client.id,
             sessionId: client.sessionId,
+            account: options.account,
             userName: options.userName,
             headMat: options.headMat,
             headColor: options.headColor,
@@ -240,6 +241,17 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
             maskColor: options.maskColor
         });
 
+        var myData = this.state.networkedUsers.toJSON()
+        
+        for (var key in myData) {
+            if (myData.hasOwnProperty(key)) {
+                if (myData[key].account === newNetworkedUser.account) {
+                    client.send("WalletNotPass", "")
+                    return;
+                }
+            }
+        }
+        
         this.state.networkedUsers.set(client.sessionId, newNetworkedUser);
 
         client.send("onJoin", newNetworkedUser);
