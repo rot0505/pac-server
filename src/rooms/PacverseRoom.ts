@@ -251,7 +251,7 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
                 }
             }
         }
-        
+
         this.state.networkedUsers.set(client.sessionId, newNetworkedUser);
 
         client.send("onJoin", newNetworkedUser);
@@ -271,7 +271,6 @@ export class PacverseRoom extends Room<ColyseusRoomState> {
         this.onMessage("onGesture", (client, gesture) => {
             this.broadcast("onGesture", gesture, { except: client });
         });
-
     }
 
     /**
